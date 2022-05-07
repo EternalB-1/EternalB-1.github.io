@@ -81,11 +81,22 @@ svge.style.strokeDasharray = length5;
 
 let i = 0;
 
-$(window).on('beforeunload', function(){
-  $(window).scrollTop(0);
-});
 function myFuncA() {
   console.log("С начала страницы:" + document.documentElement.scrollTop);
+  if (document.documentElement.scrollTop > 4100) {
+    $('#ptc11').css("stroke-dasharray","calc(40 * 5.62 * 1.85)");
+    $('#ptc11').add("stroke-dashoffset","20");
+    $('#ptc11').css("transition","2s");
+    $('#ptc22').css("stroke-dasharray","calc(40 * 5.25 * 1.85)");
+    $('#ptc22').add("stroke-dashoffset","20");
+    $('#ptc22').css("transition","2s");
+    $('#ptc33').css("stroke-dasharray","calc(40 * 5.22 * 1.85)");
+    $('#ptc33').add("stroke-dashoffset","20");
+    $('#ptc33').css("transition","2s");
+    $('#ptc44').css("stroke-dasharray","calc(40 * 5.9 * 1.85)");
+    $('#ptc44').add("stroke-dashoffset","20");
+    $('#ptc44').css("transition","2s");
+  }
   if (document.documentElement.scrollTop < 790 && i==0) {
     svga.style.strokeDashoffset = length - document.documentElement.scrollTop*4;
     svgb.style.strokeDashoffset = -2500;
@@ -121,19 +132,6 @@ function myFuncA() {
   else if (document.documentElement.scrollTop > 3650 && document.documentElement.scrollTop<4950) {
     $("#nvb").removeClass("nvbb").addClass("nvbw");
     $(".linkb").removeClass("linkb").addClass("linkw");
-
-    $('#ptc11').css("stroke-dasharray","calc(40 * 5.62 * 1.85)");
-    $('#ptc11').add("stroke-dashoffset","20");
-    $('#ptc11').css("transition","2s");
-    $('#ptc22').css("stroke-dasharray","calc(40 * 5.25 * 1.85)");
-    $('#ptc22').add("stroke-dashoffset","20");
-    $('#ptc22').css("transition","2s");
-    $('#ptc33').css("stroke-dasharray","calc(40 * 5.22 * 1.85)");
-    $('#ptc33').add("stroke-dashoffset","20");
-    $('#ptc33').css("transition","2s");
-    $('#ptc44').css("stroke-dasharray","calc(40 * 5.9 * 1.85)");
-    $('#ptc44').add("stroke-dashoffset","20");
-    $('#ptc44').css("transition","2s");
   }
   else if (document.documentElement.scrollTop > 4950 && document.documentElement.scrollTop<5900){
     $("#nvb").removeClass("nvbw").addClass("nvbb");
