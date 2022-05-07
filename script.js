@@ -81,24 +81,8 @@ svge.style.strokeDasharray = length5;
 
 let i = 0;
 
-$(function() {
-  $("form").submit(function(e) {
-
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var message = $("#message").val();
-
-        var data = 'name=' + name + '&email=' + email + '&message=' + message;
-    
-        if(data) {
-            $.ajax({
-                type: "POST",
-                url: "./mail.php",
-                data: data
-            });
-        }
-        return false;
-    });
+$(window).on('beforeunload', function(){
+  $(window).scrollTop(0);
 });
 function myFuncA() {
   console.log("С начала страницы:" + document.documentElement.scrollTop);
